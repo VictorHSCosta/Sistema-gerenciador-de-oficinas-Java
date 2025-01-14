@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.trabalho;
+
 import classesPrincipais.Verificador;
 import javax.swing.JFrame;
 
@@ -15,11 +16,10 @@ public class Trabalho extends javax.swing.JFrame {
     /**
      * Creates new form Trabalho
      */
-    
     private String email;
     private String senha;
-    private final Verificador  verificar = new Verificador();
-    
+    private final Verificador verificar = new Verificador();
+
     public Trabalho() {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
@@ -45,22 +45,28 @@ public class Trabalho extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(153, 255, 51));
+        setBackground(new java.awt.Color(240, 248, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(230, 230, 250));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setToolTipText("");
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.setInheritsPopupMenu(true);
-        jPanel1.setPreferredSize(new java.awt.Dimension(350, 350));
 
-        Login.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        Login.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
+        Login.setForeground(new java.awt.Color(72, 61, 139));
+        Login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Login.setText("Login");
 
+        labelSenha.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
+        labelSenha.setForeground(new java.awt.Color(25, 25, 112));
         labelSenha.setText("Senha:");
 
+        labelEmail.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
+        labelEmail.setForeground(new java.awt.Color(25, 25, 112));
         labelEmail.setText("Email:");
 
+        emailInput.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         emailInput.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 emailInputFocusLost(evt);
@@ -72,6 +78,7 @@ public class Trabalho extends javax.swing.JFrame {
             }
         });
 
+        senhaInput.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         senhaInput.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 senhaInputFocusLost(evt);
@@ -83,7 +90,8 @@ public class Trabalho extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 204, 0));
+        jButton1.setBackground(new java.awt.Color(72, 61, 139));
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Acessar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,56 +105,47 @@ public class Trabalho extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Login, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelSenha)
-                            .addComponent(labelEmail))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(senhaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                            .addComponent(emailInput))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                            .addComponent(labelEmail)
+                            .addComponent(labelSenha))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(senhaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(30, 30, 30)
                 .addComponent(Login)
-                .addGap(69, 69, 69)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelEmail)
-                    .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSenha)
-                    .addComponent(senhaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(jButton1)
-                .addContainerGap(101, Short.MAX_VALUE))
+                    .addComponent(senhaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setBackground(new java.awt.Color(240, 248, 255));
+        jDesktopPane1.setLayout(new java.awt.GridBagLayout()); // Altera o layout para GridBagLayout
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(343, 343, 343)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(387, Short.MAX_VALUE))
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(178, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
-        );
+        // Configuração do GridBagConstraints para centralizar o jPanel1
+        java.awt.GridBagConstraints gbc = new java.awt.GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = java.awt.GridBagConstraints.CENTER; // Centraliza o jPanel1
+        jDesktopPane1.add(jPanel1, gbc);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,14 +171,14 @@ public class Trabalho extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(this.verificar.verificarSenha(this.email, this.senha)){
+        if (this.verificar.verificarSenha(this.email, this.senha)) {
             new Homepage().setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void emailInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailInputFocusLost
         // TODO add your handling code here:
-        this.email = emailInput.getText();          
+        this.email = emailInput.getText();
     }//GEN-LAST:event_emailInputFocusLost
 
     private void senhaInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_senhaInputFocusLost
@@ -213,8 +212,6 @@ public class Trabalho extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Trabalho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
