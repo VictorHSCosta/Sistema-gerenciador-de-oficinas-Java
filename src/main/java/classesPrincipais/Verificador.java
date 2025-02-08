@@ -11,7 +11,7 @@ package classesPrincipais;
  */
 public class Verificador {  
     
-    private String usuario1 = "victorhenrique8520@gmail.com";
+    private String usuario1 = "victor@gmail.com";
     private String usuario2 = "victorhenrique8520@gmail.com";
     private String senha1 = "12345678";
     

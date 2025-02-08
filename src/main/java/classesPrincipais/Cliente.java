@@ -2,11 +2,11 @@ package classesPrincipais;
 
 import java.util.ArrayList;
 
-class Cliente extends Pessoa {
+public class Cliente extends Pessoa {
     private ArrayList<Veiculo> veiculos = new ArrayList<>();
 
     public Cliente(int id, String nome, String cpf, String telefone) {
-        super(id, nome, cpf, telefone);
+        super(id, nome, telefone, cpf);
     }
 
     public ArrayList<Veiculo> getVeiculos() {

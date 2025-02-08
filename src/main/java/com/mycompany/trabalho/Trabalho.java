@@ -173,6 +173,7 @@ public class Trabalho extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (this.verificar.verificarSenha(this.email, this.senha)) {
             new Homepage().setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

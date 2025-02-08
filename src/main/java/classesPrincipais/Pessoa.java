@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-// Pessoa e suas subclasses
+// Pessoa e a suas subclasses
 abstract class Pessoa {
     private int id;
     private String nome;
