@@ -17,7 +17,6 @@
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarFuncionario.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarServico.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarVeiculo.java
-/home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/DeletarCliente.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/DeletarFuncionario.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/DeletarServico.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/DeletarVeiculo.java
@@ -29,6 +28,7 @@
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/Finalizacao.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/Homepage.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/Pagamentos.java
+/home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/ShowCliente.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/TelaConfimacao.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/Trabalho.java
 /home/victor/Documentos/Java TP!/Sistema-gerenciador-de-oficinas-Java/src/main/java/controller/Controller.java
