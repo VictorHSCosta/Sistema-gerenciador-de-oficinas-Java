@@ -1,7 +1,7 @@
 package classesPrincipais;
 
 // Veículo e Serviços Oferecidos
-class Veiculo {
+public class Veiculo {
     private String placa;
     private String marca;
     private String modelo;
