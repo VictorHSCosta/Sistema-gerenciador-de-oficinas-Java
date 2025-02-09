@@ -233,7 +233,6 @@ public class EditarCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CriarCliente().setVisible(true);
             }
         });
     }

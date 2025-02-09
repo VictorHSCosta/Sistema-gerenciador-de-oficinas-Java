@@ -58,14 +58,16 @@ public class Controller {
         return null;
     }
 
-    public void criarCliente(String nome, String cpf, String telefone) {
+    public boolean criarCliente(String nome, String cpf, String telefone) {
         if (nome == null || cpf == null || telefone == null) {
             throw new IllegalArgumentException("Nenhum dos parâmetros pode ser nulo.");
         }
         if (!clientes.containsKey(cpf)) {
             clientes.put(cpf, new Cliente(id++, nome, cpf, telefone));
+            return true;
         } else {
             System.out.println("Cliente já existe no banco de dados");
+            return false;
         }
     }
 
