@@ -4,9 +4,12 @@
  */
 package com.mycompany.trabalho;
 
+import java.awt.*;
+
+
 /**
  *
- * @author victor-costa
+ * @author alan-henrique
  */
 public class Homepage extends javax.swing.JFrame {
     
@@ -15,9 +18,19 @@ public class Homepage extends javax.swing.JFrame {
     /**
      * Creates new form homepage
      */
+    
+    private final CriarCliente clientes = CriarCliente.getInstance();
+    private final CriarVeiculo veiculos = new CriarVeiculo();
+
+            
     private Homepage() {
         initComponents();
-        this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_VERT);
+        
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        
+        screenSize.setSize(1024.0, 1130.0);
+        
     }
     
      ;
@@ -44,218 +57,309 @@ public class Homepage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Menu = new javax.swing.JPanel();
-        MenuTittle = new javax.swing.JLabel();
-        ClienteLabel = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        btnLogout = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        btnLogout5 = new javax.swing.JButton();
+        btnLogout4 = new javax.swing.JButton();
+        btnLogout3 = new javax.swing.JButton();
+        btnLogout2 = new javax.swing.JButton();
+        btnLogout1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(89, 82, 75));
+        setPreferredSize(new java.awt.Dimension(1024, 900));
 
-        Menu.setBackground(new java.awt.Color(0, 102, 102));
-        Menu.setForeground(new java.awt.Color(0, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(62, 67, 76));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        MenuTittle.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
-        MenuTittle.setForeground(new java.awt.Color(255, 255, 255));
-        MenuTittle.setText("Mecanica VAP");
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/service.png"))); // NOI18N
 
-        ClienteLabel.setBackground(new java.awt.Color(255, 255, 255));
-        ClienteLabel.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
-        ClienteLabel.setForeground(new java.awt.Color(255, 255, 255));
-        ClienteLabel.setText("Cliente:");
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 30)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Mecanica Vap");
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.jpeg"))); // NOI18N
-        jLabel7.setText("Adicionar Cliente");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 116, 116));
+        jLabel5.setText("Menu");
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/seekCLiente.png"))); // NOI18N
-        jLabel6.setText("Procurar Cliente");
-
-        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
-        Menu.setLayout(MenuLayout);
-        MenuLayout.setHorizontalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(MenuTittle)
-                        .addComponent(ClienteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel7)))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        MenuLayout.setVerticalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(MenuTittle)
-                .addGap(32, 32, 32)
-                .addComponent(ClienteLabel)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        jLabel1.setText("Abrir um novo serviço");
-
-        jLabel2.setText("Cpf do cliente");
-
-        jLabel3.setText("Mecanico");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setBackground(new java.awt.Color(179, 24, 33));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(204, 204, 204));
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/log-out.png"))); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.setToolTipText("Sair do sistema");
+        btnLogout.setAlignmentY(0.0F);
+        btnLogout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        btnLogout.setBorderPainted(false);
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLogout.setDefaultCapable(false);
+        btnLogout.setFocusPainted(false);
+        btnLogout.setFocusable(false);
+        btnLogout.setIconTextGap(8);
+        btnLogout.setName(""); // NOI18N
+        btnLogout.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLogout.setRequestFocusEnabled(false);
+        btnLogout.setRolloverEnabled(false);
+        btnLogout.setVerifyInputWhenFocusTarget(false);
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
-
-        jLabel4.setText("Placa do veiculo");
-
-        jLabel5.setText("Tipo de serviço");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Id", "Cliente", "Mecanico", "Placa "
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(46, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel4)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel4)
+                .addGap(211, 211, 211)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel1)
-                        .addGap(33, 33, 33)
+                        .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 488, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(62, 62, 62)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(37, 37, 37)))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(26, 26, 26))
         );
+
+        jPanel2.setBackground(new java.awt.Color(89, 82, 75));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1024, 900));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnLogout5.setBackground(new java.awt.Color(73, 55, 29));
+        btnLogout5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnLogout5.setForeground(new java.awt.Color(204, 204, 204));
+        btnLogout5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/car.png"))); // NOI18N
+        btnLogout5.setText("Serviços");
+        btnLogout5.setToolTipText("");
+        btnLogout5.setAlignmentY(0.0F);
+        btnLogout5.setAutoscrolls(true);
+        btnLogout5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnLogout5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLogout5.setDefaultCapable(false);
+        btnLogout5.setFocusCycleRoot(true);
+        btnLogout5.setFocusable(false);
+        btnLogout5.setIconTextGap(8);
+        btnLogout5.setInheritsPopupMenu(true);
+        btnLogout5.setName(""); // NOI18N
+        btnLogout5.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLogout5.setRequestFocusEnabled(false);
+        btnLogout5.setRolloverEnabled(false);
+        btnLogout5.setVerifyInputWhenFocusTarget(false);
+        btnLogout5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogout5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogout5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 300, 90));
+
+        btnLogout4.setBackground(new java.awt.Color(73, 55, 29));
+        btnLogout4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnLogout4.setForeground(new java.awt.Color(204, 204, 204));
+        btnLogout4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/car-repair.png"))); // NOI18N
+        btnLogout4.setText("Veiculos");
+        btnLogout4.setToolTipText("");
+        btnLogout4.setAlignmentY(0.0F);
+        btnLogout4.setAutoscrolls(true);
+        btnLogout4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnLogout4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLogout4.setDefaultCapable(false);
+        btnLogout4.setFocusCycleRoot(true);
+        btnLogout4.setFocusable(false);
+        btnLogout4.setIconTextGap(8);
+        btnLogout4.setInheritsPopupMenu(true);
+        btnLogout4.setName(""); // NOI18N
+        btnLogout4.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLogout4.setRequestFocusEnabled(false);
+        btnLogout4.setRolloverEnabled(false);
+        btnLogout4.setVerifyInputWhenFocusTarget(false);
+        btnLogout4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogout4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogout4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 300, 90));
+
+        btnLogout3.setBackground(new java.awt.Color(73, 55, 29));
+        btnLogout3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnLogout3.setForeground(new java.awt.Color(204, 204, 204));
+        btnLogout3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/wallet.png"))); // NOI18N
+        btnLogout3.setText("Pagamento");
+        btnLogout3.setToolTipText("");
+        btnLogout3.setAlignmentY(0.0F);
+        btnLogout3.setAutoscrolls(true);
+        btnLogout3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnLogout3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLogout3.setDefaultCapable(false);
+        btnLogout3.setFocusCycleRoot(true);
+        btnLogout3.setFocusable(false);
+        btnLogout3.setIconTextGap(8);
+        btnLogout3.setInheritsPopupMenu(true);
+        btnLogout3.setName(""); // NOI18N
+        btnLogout3.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLogout3.setRequestFocusEnabled(false);
+        btnLogout3.setRolloverEnabled(false);
+        btnLogout3.setVerifyInputWhenFocusTarget(false);
+        btnLogout3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogout3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogout3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 300, 90));
+
+        btnLogout2.setBackground(new java.awt.Color(73, 55, 29));
+        btnLogout2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnLogout2.setForeground(new java.awt.Color(204, 204, 204));
+        btnLogout2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/employee.png"))); // NOI18N
+        btnLogout2.setText("Funcionarios");
+        btnLogout2.setToolTipText("");
+        btnLogout2.setAlignmentY(0.0F);
+        btnLogout2.setAutoscrolls(true);
+        btnLogout2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnLogout2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLogout2.setDefaultCapable(false);
+        btnLogout2.setFocusCycleRoot(true);
+        btnLogout2.setFocusable(false);
+        btnLogout2.setIconTextGap(8);
+        btnLogout2.setInheritsPopupMenu(true);
+        btnLogout2.setName(""); // NOI18N
+        btnLogout2.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLogout2.setRequestFocusEnabled(false);
+        btnLogout2.setRolloverEnabled(false);
+        btnLogout2.setVerifyInputWhenFocusTarget(false);
+        btnLogout2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogout2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogout2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 300, 90));
+
+        btnLogout1.setBackground(new java.awt.Color(73, 55, 29));
+        btnLogout1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnLogout1.setForeground(new java.awt.Color(204, 204, 204));
+        btnLogout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/client.png"))); // NOI18N
+        btnLogout1.setText("Clientes");
+        btnLogout1.setToolTipText("");
+        btnLogout1.setAlignmentY(0.0F);
+        btnLogout1.setAutoscrolls(true);
+        btnLogout1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnLogout1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLogout1.setDefaultCapable(false);
+        btnLogout1.setFocusCycleRoot(true);
+        btnLogout1.setFocusable(false);
+        btnLogout1.setIconTextGap(8);
+        btnLogout1.setInheritsPopupMenu(true);
+        btnLogout1.setName(""); // NOI18N
+        btnLogout1.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLogout1.setRequestFocusEnabled(false);
+        btnLogout1.setRolloverEnabled(false);
+        btnLogout1.setVerifyInputWhenFocusTarget(false);
+        btnLogout1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogout1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 300, 90));
+
+        jButton1.setBackground(new java.awt.Color(0, 65, 72));
+        jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 48)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton1.setText("Seja Bem Vindo");
+        jButton1.setBorderPainted(false);
+        jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jButton1.setFocusPainted(false);
+        jButton1.setHideActionText(true);
+        jButton1.setInheritsPopupMenu(true);
+        jButton1.setRequestFocusEnabled(false);
+        jButton1.setRolloverEnabled(false);
+        jButton1.setSelected(true);
+        jButton1.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 410, 70));
+
+        jLabel2.setBackground(new java.awt.Color(102, 79, 57));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/carroMaior.jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setToolTipText("");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 754));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
-        CriarCliente cliente = CriarCliente.getInstance();
-        cliente.setVisible(true);
-    }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnLogout1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        
+        clientes.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLogout1ActionPerformed
+
+    private void btnLogout2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogout2ActionPerformed
+
+    private void btnLogout3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogout3ActionPerformed
+
+    private void btnLogout4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout4ActionPerformed
+        // TODO add your handling code here:
+        veiculos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLogout4ActionPerformed
+
+    private void btnLogout5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogout5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,26 +398,19 @@ public class Homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ClienteLabel;
-    private javax.swing.JPanel Menu;
-    private javax.swing.JLabel MenuTittle;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnLogout1;
+    private javax.swing.JButton btnLogout2;
+    private javax.swing.JButton btnLogout3;
+    private javax.swing.JButton btnLogout4;
+    private javax.swing.JButton btnLogout5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 
     private Object CriarCliente() {

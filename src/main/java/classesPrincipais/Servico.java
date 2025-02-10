@@ -12,11 +12,10 @@ class Servico extends ServicoBase {
 
     public Servico(int id, TipoServico tipo, String descricao, LocalDate dataInicio, Cliente cliente, Veiculo veiculo) {
         super(id, tipo, descricao, dataInicio);
+        
+        this.cliente = cliente;
+        this.veiculo = veiculo;
     }
-
-    public void associarFuncionario(Funcionario funcionario) {}
-    public List<Funcionario> listarFuncionarios() { return null; }
-    public void concluirServico(LocalDate dataFim) {}
 
     public Cliente getCliente() {
         return cliente;
@@ -49,4 +48,8 @@ class Servico extends ServicoBase {
     public void setServicosOferecidos(List<ServicoOferecido> servicosOferecidos) {
         this.servicosOferecidos = servicosOferecidos;
     }
+    
+    public void associarFuncionario(Funcionario funcionario) {}
+    public List<Funcionario> listarFuncionarios() { return null; }
+    public void concluirServico(LocalDate dataFim) {}
 }

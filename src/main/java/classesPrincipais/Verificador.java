@@ -9,17 +9,15 @@ package classesPrincipais;
  *
  * @author victor-costa
  */
-public class Verificador {  
-    
-
-    
-    
-    public boolean verificarSenha(String usuario ,String senha){
-        return switch (usuario) {
-            case "adm@gmail.com" -> senha.equals("123456") ? true : false;
-            case "amd" -> senha.equals("amd") ? true :false;
-            default -> false;
-        };
+public class Verificador {
+    public boolean verificarSenha(String usuario, String senha) {
+        switch (usuario) {
+            case "adm@gmail.com":
+                return senha.equals("123456");
+            case "amd":
+                return senha.equals("amd");
+            default:
+                return false;
+        }
     }
-
 }

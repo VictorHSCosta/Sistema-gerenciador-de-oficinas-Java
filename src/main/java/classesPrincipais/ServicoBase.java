@@ -16,7 +16,6 @@ abstract class ServicoBase {
         this.tipo = tipo;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
         this.status = status;
     }
 
