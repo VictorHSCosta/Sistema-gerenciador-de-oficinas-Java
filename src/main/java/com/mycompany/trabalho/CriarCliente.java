@@ -24,8 +24,12 @@ public class CriarCliente extends javax.swing.JFrame {
     
     private CriarCliente() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        
         controller = Controller.getInstance();
+        
+        // Alterar comportamento do botão "X"
+        this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         
     }
     
@@ -108,12 +112,12 @@ public class CriarCliente extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("Criar Cliente");
 
         jLabel5.setText("Telefone");
 
-        jToggleButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jToggleButton1.setBackground(new java.awt.Color(0, 153, 153));
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("Criar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -234,6 +238,9 @@ public class CriarCliente extends javax.swing.JFrame {
             this.setVisible(false);
             Homepage homepage = Homepage.getInstance();
             homepage.setVisible(true);
+            LabelTelefone.setText("");
+            name.setText("");
+            cpf.setText("");
             new TelaConfimacao("Cliente criado",msg).setVisible(true);
         }else{
             new TelaConfimacao("Erro","Erro, não foi possivel criar o cliente tente novamente").setVisible(true);

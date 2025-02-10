@@ -1,7 +1,9 @@
 classesPrincipais/Dinheiro.class
+com/mycompany/trabalho/ShowCliente$5.class
 com/mycompany/trabalho/CriarVeiculo$4.class
 com/mycompany/trabalho/EditarCliente$5.class
 classesPrincipais/JsonDatabase$3.class
+com/mycompany/trabalho/Homepage$4.class
 com/mycompany/trabalho/CriarServico$2.class
 com/mycompany/trabalho/EditarFuncionario$1.class
 com/mycompany/trabalho/CriarCliente$3.class
@@ -34,6 +36,8 @@ com/mycompany/trabalho/CriarFuncionario$4.class
 com/mycompany/trabalho/CriarCliente$1.class
 com/mycompany/trabalho/DeletarFuncionario.class
 classesPrincipais/JsonDatabase$1.class
+com/mycompany/trabalho/Homepage$5.class
+com/mycompany/trabalho/ShowCliente$4.class
 classesPrincipais/Funcionario.class
 com/mycompany/trabalho/EditarCliente$4.class
 com/mycompany/trabalho/Homepage.class
