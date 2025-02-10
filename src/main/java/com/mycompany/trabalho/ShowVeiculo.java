@@ -217,29 +217,43 @@ public class ShowVeiculo extends javax.swing.JFrame {
 
     private void EditarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarButtonActionPerformed
                                                     
-         Controller controle = Controller.getInstance();
-        DefaultTableModel model = (DefaultTableModel) Tabela.getModel();
+        // Obtém a linha selecionada na tabela
+        int selectedRow = Tabela.getSelectedRow();
 
-        if (Tabela.isEditing()) {
-            Tabela.getCellEditor().stopCellEditing(); // Garante que os dados editados sejam salvos antes da leitura
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um veículo para editar.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        for (int i = 0; i < model.getRowCount(); i++) {
-            String nome = (String) model.getValueAt(i, 0);
-            String telefone = (String) model.getValueAt(i, 1);
-            String cpf = (String) model.getValueAt(i, 2);
+        // Obtém os valores da linha selecionada
+        String cpf = Tabela.getValueAt(selectedRow, 1).toString();
+        String placa = Tabela.getValueAt(selectedRow, 2).toString();
 
-            System.out.println("Editando CPF: " + cpf + " | Nome: " + nome + " | Telefone: " + telefone);
+        // Obtém os novos valores editados pelo usuário
+        String novaMarca = JOptionPane.showInputDialog("Nova Marca:", Tabela.getValueAt(selectedRow, 3));
+        String novoModelo = JOptionPane.showInputDialog("Novo Modelo:", Tabela.getValueAt(selectedRow, 4));
+        String novaCor = JOptionPane.showInputDialog("Nova Cor:", Tabela.getValueAt(selectedRow, 5));
 
-            boolean sucesso = controle.editarCliente(cpf, nome, telefone);
-
-            if (!sucesso) {
-                JOptionPane.showMessageDialog(null, "Erro ao editar cliente com CPF: " + cpf);
-            }
+        int novoAnoFabricacao, novoAnoModelo, novaQuilometragem;
+        try {
+            novoAnoFabricacao = Integer.parseInt(JOptionPane.showInputDialog("Novo Ano de Fabricação:", Tabela.getValueAt(selectedRow, 6)));
+            novoAnoModelo = Integer.parseInt(JOptionPane.showInputDialog("Novo Ano do Modelo:", Tabela.getValueAt(selectedRow, 7)));
+            novaQuilometragem = Integer.parseInt(JOptionPane.showInputDialog("Nova Quilometragem:", Tabela.getValueAt(selectedRow, 8)));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Valores numéricos inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        preencherTabela();
-        JOptionPane.showMessageDialog(null, "Edições salvas com sucesso!");
+        // Edita o veículo no controlador
+        boolean sucesso = controle.editarVeiculoDoCliente(cpf, placa, novaMarca, novoModelo, novaCor, novoAnoFabricacao, novoAnoModelo, novaQuilometragem);
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(null, "Veículo editado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            preencherTabela(); // Atualiza a tabela após a edição
+        } else {
+            JOptionPane.showMessageDialog(null, "Falha ao editar o veículo.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
     
     }//GEN-LAST:event_EditarButtonActionPerformed
 
@@ -341,40 +355,40 @@ public class ShowVeiculo extends javax.swing.JFrame {
     
 
     public void preencherTabela() {
-    // Obtém a instância do controlador
-    Controller controle = Controller.getInstance();
-    ArrayList<HashMap<String, String>> veiculos = controle.getTodosOsVeiculos();
+        // Obtém a instância do controlador
+        Controller controle = Controller.getInstance();
+        ArrayList<HashMap<String, String>> veiculos = controle.getTodosOsVeiculos();
 
-    // Obtém o modelo da tabela
-    DefaultTableModel model = (DefaultTableModel) Tabela.getModel();
+        // Obtém o modelo da tabela
+        DefaultTableModel model = (DefaultTableModel) Tabela.getModel();
 
-    // Verifica se as colunas já foram definidas
-    if (model.getColumnCount() == 0) {
-        // Define as colunas da tabela
-        model.setColumnIdentifiers(new String[]{
-            "Dono", "CPF", "Placa", "Marca", "Modelo", "Cor", "Ano Fabricação", "Ano Modelo", "Quilometragem"
-        });
+        // Verifica se as colunas já foram definidas
+        if (model.getColumnCount() == 0) {
+            // Define as colunas da tabela
+            model.setColumnIdentifiers(new String[]{
+                "Dono", "CPF", "Placa", "Marca", "Modelo", "Cor", "Ano Fabricação", "Ano Modelo", "Quilometragem"
+            });
+        }
+
+        // Limpa a tabela antes de adicionar novos dados (evita duplicações)
+        model.setRowCount(0);
+
+        // Percorre a lista de veículos e adiciona na tabela
+        for (HashMap<String, String> veiculoData : veiculos) {
+            String dono = veiculoData.get("dono");
+            String cpf = veiculoData.get("cpf");
+            String placa = veiculoData.get("placa");
+            String marca = veiculoData.get("marca");
+            String modeloVeiculo = veiculoData.get("modelo");
+            String cor = veiculoData.get("cor");
+            String anoFabricacao = veiculoData.get("anoFabricacao");
+            String anoModelo = veiculoData.get("anoModelo");
+            String quilometragem = veiculoData.get("quilometragem");
+
+            // Adiciona a linha no modelo da tabela
+            model.addRow(new Object[]{dono, cpf, placa, marca, modeloVeiculo, cor, anoFabricacao, anoModelo, quilometragem});
+        }
     }
-
-    // Limpa a tabela antes de adicionar novos dados (evita duplicações)
-    model.setRowCount(0);
-
-    // Percorre a lista de veículos e adiciona na tabela
-    for (HashMap<String, String> veiculoData : veiculos) {
-        String dono = veiculoData.get("dono");
-        String cpf = veiculoData.get("cpf");
-        String placa = veiculoData.get("placa");
-        String marca = veiculoData.get("marca");
-        String modeloVeiculo = veiculoData.get("modelo");
-        String cor = veiculoData.get("cor");
-        String anoFabricacao = veiculoData.get("anoFabricacao");
-        String anoModelo = veiculoData.get("anoModelo");
-        String quilometragem = veiculoData.get("quilometragem");
-
-        // Adiciona a linha no modelo da tabela
-        model.addRow(new Object[]{dono, cpf, placa, marca, modeloVeiculo, cor, anoFabricacao, anoModelo, quilometragem});
-    }
-}
 
 
 
