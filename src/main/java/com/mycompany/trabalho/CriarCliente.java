@@ -71,7 +71,6 @@ public class CriarCliente extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(327670, 327670));
 
-        name.setText("Nome");
         name.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 nameFocusLost(evt);
@@ -87,7 +86,6 @@ public class CriarCliente extends javax.swing.JFrame {
 
         jLabel1.setText("Nome:");
 
-        cpf.setText("cpf");
         cpf.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cpfFocusLost(evt);
@@ -99,7 +97,6 @@ public class CriarCliente extends javax.swing.JFrame {
             }
         });
 
-        LabelTelefone.setText("Telefone");
         LabelTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 LabelTelefoneFocusLost(evt);
@@ -236,8 +233,6 @@ public class CriarCliente extends javax.swing.JFrame {
         if(Verifica == true){
             String msg = "O cliente foi" + nome + " criado com sucesso" ;
             this.setVisible(false);
-            Homepage homepage = Homepage.getInstance();
-            homepage.setVisible(true);
             LabelTelefone.setText("");
             name.setText("");
             cpf.setText("");

@@ -217,4 +217,28 @@ public class Controller {
         }
         return lista;
     }
+    
+    
+    public ArrayList<HashMap<String, String>> getTodosOsVeiculos() {
+    ArrayList<HashMap<String, String>> veiculosLista = new ArrayList<>();
+
+    for (Cliente cliente : clientes.values()) {
+        for (Veiculo veiculo : cliente.getVeiculos()) {
+            HashMap<String, String> veiculoData = new HashMap<>();
+            veiculoData.put("dono", cliente.getNome());
+            veiculoData.put("cpf", cliente.getCpf());
+            veiculoData.put("placa", veiculo.getPlaca());
+            veiculoData.put("marca", veiculo.getMarca());
+            veiculoData.put("modelo", veiculo.getModelo());
+            veiculoData.put("cor", veiculo.getCor());
+            veiculoData.put("anoFabricacao", String.valueOf(veiculo.getAnoFabricacao()));
+            veiculoData.put("anoModelo", String.valueOf(veiculo.getAnoModelo()));
+            veiculoData.put("quilometragem", String.valueOf(veiculo.getQuilometragem()));
+
+            veiculosLista.add(veiculoData);
+        }
+    }
+    return veiculosLista;
+}
+
 }
