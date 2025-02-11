@@ -31,6 +31,8 @@ public class Homepage extends javax.swing.JFrame {
         
         screenSize.setSize(1024.0, 1130.0);
         
+        /*this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+        configurarRedimensionamento();*/
     }
     
      ;
@@ -63,11 +65,11 @@ public class Homepage extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        btnLogout5 = new javax.swing.JButton();
-        btnLogout4 = new javax.swing.JButton();
-        btnLogout3 = new javax.swing.JButton();
-        btnLogout2 = new javax.swing.JButton();
-        btnLogout1 = new javax.swing.JButton();
+        btnService = new javax.swing.JButton();
+        btnLVeicu = new javax.swing.JButton();
+        btnPaga = new javax.swing.JButton();
+        btnFun = new javax.swing.JButton();
+        btnClients = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -148,138 +150,138 @@ public class Homepage extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 82, 75));
         jPanel2.setPreferredSize(new java.awt.Dimension(1024, 900));
 
-        btnLogout5.setBackground(new java.awt.Color(73, 55, 29));
-        btnLogout5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        btnLogout5.setForeground(new java.awt.Color(204, 204, 204));
-        btnLogout5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/car.png"))); // NOI18N
-        btnLogout5.setText("Serviços");
-        btnLogout5.setToolTipText("");
-        btnLogout5.setAlignmentY(0.0F);
-        btnLogout5.setAutoscrolls(true);
-        btnLogout5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnLogout5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        btnLogout5.setDefaultCapable(false);
-        btnLogout5.setFocusCycleRoot(true);
-        btnLogout5.setFocusable(false);
-        btnLogout5.setIconTextGap(8);
-        btnLogout5.setInheritsPopupMenu(true);
-        btnLogout5.setName(""); // NOI18N
-        btnLogout5.setPreferredSize(new java.awt.Dimension(165, 64));
-        btnLogout5.setRequestFocusEnabled(false);
-        btnLogout5.setRolloverEnabled(false);
-        btnLogout5.setVerifyInputWhenFocusTarget(false);
-        btnLogout5.addActionListener(new java.awt.event.ActionListener() {
+        btnService.setBackground(new java.awt.Color(73, 55, 29));
+        btnService.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnService.setForeground(new java.awt.Color(204, 204, 204));
+        btnService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/car.png"))); // NOI18N
+        btnService.setText("Serviços");
+        btnService.setToolTipText("");
+        btnService.setAlignmentY(0.0F);
+        btnService.setAutoscrolls(true);
+        btnService.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnService.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnService.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnService.setDefaultCapable(false);
+        btnService.setFocusCycleRoot(true);
+        btnService.setFocusable(false);
+        btnService.setIconTextGap(8);
+        btnService.setInheritsPopupMenu(true);
+        btnService.setName(""); // NOI18N
+        btnService.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnService.setRequestFocusEnabled(false);
+        btnService.setRolloverEnabled(false);
+        btnService.setVerifyInputWhenFocusTarget(false);
+        btnService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogout5ActionPerformed(evt);
+                btnServiceActionPerformed(evt);
             }
         });
 
-        btnLogout4.setBackground(new java.awt.Color(73, 55, 29));
-        btnLogout4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        btnLogout4.setForeground(new java.awt.Color(204, 204, 204));
-        btnLogout4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/car-repair.png"))); // NOI18N
-        btnLogout4.setText("Veiculos");
-        btnLogout4.setToolTipText("");
-        btnLogout4.setAlignmentY(0.0F);
-        btnLogout4.setAutoscrolls(true);
-        btnLogout4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnLogout4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        btnLogout4.setDefaultCapable(false);
-        btnLogout4.setFocusCycleRoot(true);
-        btnLogout4.setFocusable(false);
-        btnLogout4.setIconTextGap(8);
-        btnLogout4.setInheritsPopupMenu(true);
-        btnLogout4.setName(""); // NOI18N
-        btnLogout4.setPreferredSize(new java.awt.Dimension(165, 64));
-        btnLogout4.setRequestFocusEnabled(false);
-        btnLogout4.setRolloverEnabled(false);
-        btnLogout4.setVerifyInputWhenFocusTarget(false);
-        btnLogout4.addActionListener(new java.awt.event.ActionListener() {
+        btnLVeicu.setBackground(new java.awt.Color(73, 55, 29));
+        btnLVeicu.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnLVeicu.setForeground(new java.awt.Color(204, 204, 204));
+        btnLVeicu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/car-repair.png"))); // NOI18N
+        btnLVeicu.setText("Veiculos");
+        btnLVeicu.setToolTipText("");
+        btnLVeicu.setAlignmentY(0.0F);
+        btnLVeicu.setAutoscrolls(true);
+        btnLVeicu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnLVeicu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnLVeicu.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnLVeicu.setDefaultCapable(false);
+        btnLVeicu.setFocusCycleRoot(true);
+        btnLVeicu.setFocusable(false);
+        btnLVeicu.setIconTextGap(8);
+        btnLVeicu.setInheritsPopupMenu(true);
+        btnLVeicu.setName(""); // NOI18N
+        btnLVeicu.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnLVeicu.setRequestFocusEnabled(false);
+        btnLVeicu.setRolloverEnabled(false);
+        btnLVeicu.setVerifyInputWhenFocusTarget(false);
+        btnLVeicu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogout4ActionPerformed(evt);
+                btnLVeicuActionPerformed(evt);
             }
         });
 
-        btnLogout3.setBackground(new java.awt.Color(73, 55, 29));
-        btnLogout3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        btnLogout3.setForeground(new java.awt.Color(204, 204, 204));
-        btnLogout3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/wallet.png"))); // NOI18N
-        btnLogout3.setText("Pagamento");
-        btnLogout3.setToolTipText("");
-        btnLogout3.setAlignmentY(0.0F);
-        btnLogout3.setAutoscrolls(true);
-        btnLogout3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnLogout3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        btnLogout3.setDefaultCapable(false);
-        btnLogout3.setFocusCycleRoot(true);
-        btnLogout3.setFocusable(false);
-        btnLogout3.setIconTextGap(8);
-        btnLogout3.setInheritsPopupMenu(true);
-        btnLogout3.setName(""); // NOI18N
-        btnLogout3.setPreferredSize(new java.awt.Dimension(165, 64));
-        btnLogout3.setRequestFocusEnabled(false);
-        btnLogout3.setRolloverEnabled(false);
-        btnLogout3.setVerifyInputWhenFocusTarget(false);
-        btnLogout3.addActionListener(new java.awt.event.ActionListener() {
+        btnPaga.setBackground(new java.awt.Color(73, 55, 29));
+        btnPaga.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnPaga.setForeground(new java.awt.Color(204, 204, 204));
+        btnPaga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/wallet.png"))); // NOI18N
+        btnPaga.setText("Pagamento");
+        btnPaga.setToolTipText("");
+        btnPaga.setAlignmentY(0.0F);
+        btnPaga.setAutoscrolls(true);
+        btnPaga.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnPaga.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnPaga.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnPaga.setDefaultCapable(false);
+        btnPaga.setFocusCycleRoot(true);
+        btnPaga.setFocusable(false);
+        btnPaga.setIconTextGap(8);
+        btnPaga.setInheritsPopupMenu(true);
+        btnPaga.setName(""); // NOI18N
+        btnPaga.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnPaga.setRequestFocusEnabled(false);
+        btnPaga.setRolloverEnabled(false);
+        btnPaga.setVerifyInputWhenFocusTarget(false);
+        btnPaga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogout3ActionPerformed(evt);
+                btnPagaActionPerformed(evt);
             }
         });
 
-        btnLogout2.setBackground(new java.awt.Color(73, 55, 29));
-        btnLogout2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        btnLogout2.setForeground(new java.awt.Color(204, 204, 204));
-        btnLogout2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/employee.png"))); // NOI18N
-        btnLogout2.setText("Funcionarios");
-        btnLogout2.setToolTipText("");
-        btnLogout2.setAlignmentY(0.0F);
-        btnLogout2.setAutoscrolls(true);
-        btnLogout2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnLogout2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        btnLogout2.setDefaultCapable(false);
-        btnLogout2.setFocusCycleRoot(true);
-        btnLogout2.setFocusable(false);
-        btnLogout2.setIconTextGap(8);
-        btnLogout2.setInheritsPopupMenu(true);
-        btnLogout2.setName(""); // NOI18N
-        btnLogout2.setPreferredSize(new java.awt.Dimension(165, 64));
-        btnLogout2.setRequestFocusEnabled(false);
-        btnLogout2.setRolloverEnabled(false);
-        btnLogout2.setVerifyInputWhenFocusTarget(false);
-        btnLogout2.addActionListener(new java.awt.event.ActionListener() {
+        btnFun.setBackground(new java.awt.Color(73, 55, 29));
+        btnFun.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnFun.setForeground(new java.awt.Color(204, 204, 204));
+        btnFun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/employee.png"))); // NOI18N
+        btnFun.setText("Funcionarios");
+        btnFun.setToolTipText("");
+        btnFun.setAlignmentY(0.0F);
+        btnFun.setAutoscrolls(true);
+        btnFun.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnFun.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnFun.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnFun.setDefaultCapable(false);
+        btnFun.setFocusCycleRoot(true);
+        btnFun.setFocusable(false);
+        btnFun.setIconTextGap(8);
+        btnFun.setInheritsPopupMenu(true);
+        btnFun.setName(""); // NOI18N
+        btnFun.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnFun.setRequestFocusEnabled(false);
+        btnFun.setRolloverEnabled(false);
+        btnFun.setVerifyInputWhenFocusTarget(false);
+        btnFun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogout2ActionPerformed(evt);
+                btnFunActionPerformed(evt);
             }
         });
 
-        btnLogout1.setBackground(new java.awt.Color(73, 55, 29));
-        btnLogout1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        btnLogout1.setForeground(new java.awt.Color(204, 204, 204));
-        btnLogout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/client.png"))); // NOI18N
-        btnLogout1.setText("Clientes");
-        btnLogout1.setToolTipText("");
-        btnLogout1.setAlignmentY(0.0F);
-        btnLogout1.setAutoscrolls(true);
-        btnLogout1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnLogout1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        btnLogout1.setDefaultCapable(false);
-        btnLogout1.setFocusCycleRoot(true);
-        btnLogout1.setFocusable(false);
-        btnLogout1.setIconTextGap(8);
-        btnLogout1.setInheritsPopupMenu(true);
-        btnLogout1.setName(""); // NOI18N
-        btnLogout1.setPreferredSize(new java.awt.Dimension(165, 64));
-        btnLogout1.setRequestFocusEnabled(false);
-        btnLogout1.setRolloverEnabled(false);
-        btnLogout1.setVerifyInputWhenFocusTarget(false);
-        btnLogout1.addActionListener(new java.awt.event.ActionListener() {
+        btnClients.setBackground(new java.awt.Color(73, 55, 29));
+        btnClients.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        btnClients.setForeground(new java.awt.Color(204, 204, 204));
+        btnClients.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/client.png"))); // NOI18N
+        btnClients.setText("Clientes");
+        btnClients.setToolTipText("");
+        btnClients.setAlignmentY(0.0F);
+        btnClients.setAutoscrolls(true);
+        btnClients.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
+        btnClients.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClients.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btnClients.setDefaultCapable(false);
+        btnClients.setFocusCycleRoot(true);
+        btnClients.setFocusable(false);
+        btnClients.setIconTextGap(8);
+        btnClients.setInheritsPopupMenu(true);
+        btnClients.setName(""); // NOI18N
+        btnClients.setPreferredSize(new java.awt.Dimension(165, 64));
+        btnClients.setRequestFocusEnabled(false);
+        btnClients.setRolloverEnabled(false);
+        btnClients.setVerifyInputWhenFocusTarget(false);
+        btnClients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogout1ActionPerformed(evt);
+                btnClientsActionPerformed(evt);
             }
         });
 
@@ -296,6 +298,11 @@ public class Homepage extends javax.swing.JFrame {
         jButton1.setRolloverEnabled(false);
         jButton1.setSelected(true);
         jButton1.setVerifyInputWhenFocusTarget(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(102, 79, 57));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/carroMaior.jpeg"))); // NOI18N
@@ -312,18 +319,18 @@ public class Homepage extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(570, 570, 570)
-                .addComponent(btnLogout4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnLVeicu, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(190, 190, 190)
-                .addComponent(btnLogout2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFun, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addComponent(btnLogout5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnService, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(380, 380, 380)
-                .addComponent(btnLogout3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnPaga, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(190, 190, 190)
-                .addComponent(btnLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnClients, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -332,17 +339,17 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
-                .addComponent(btnLogout4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLVeicu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLogout2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLogout5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnFun, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnService, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(430, 430, 430)
-                .addComponent(btnLogout3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnPaga, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(190, 190, 190)
-                .addComponent(btnLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnClients, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
@@ -371,30 +378,34 @@ public class Homepage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnLogout1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout1ActionPerformed
+    private void btnClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientsActionPerformed
         // TODO add your handling code here:
         
         clientes.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnLogout1ActionPerformed
+    }//GEN-LAST:event_btnClientsActionPerformed
 
-    private void btnLogout2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout2ActionPerformed
+    private void btnFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFunActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLogout2ActionPerformed
+    }//GEN-LAST:event_btnFunActionPerformed
 
-    private void btnLogout3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout3ActionPerformed
+    private void btnPagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLogout3ActionPerformed
+    }//GEN-LAST:event_btnPagaActionPerformed
 
-    private void btnLogout4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout4ActionPerformed
+    private void btnLVeicuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLVeicuActionPerformed
         // TODO add your handling code here:
         veiculos.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnLogout4ActionPerformed
+    }//GEN-LAST:event_btnLVeicuActionPerformed
 
-    private void btnLogout5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogout5ActionPerformed
+    private void btnServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServiceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLogout5ActionPerformed
+    }//GEN-LAST:event_btnServiceActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,15 +423,12 @@ public class Homepage extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
 
@@ -433,12 +441,12 @@ public class Homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClients;
+    private javax.swing.JButton btnFun;
+    private javax.swing.JButton btnLVeicu;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnLogout1;
-    private javax.swing.JButton btnLogout2;
-    private javax.swing.JButton btnLogout3;
-    private javax.swing.JButton btnLogout4;
-    private javax.swing.JButton btnLogout5;
+    private javax.swing.JButton btnPaga;
+    private javax.swing.JButton btnService;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -451,6 +459,4 @@ public class Homepage extends javax.swing.JFrame {
     private Object CriarCliente() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-   
 }

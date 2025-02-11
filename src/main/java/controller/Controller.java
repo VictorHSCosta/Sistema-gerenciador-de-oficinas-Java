@@ -2,6 +2,11 @@ package controller;
 
 import classesPrincipais.Cliente;
 import classesPrincipais.Veiculo;
+import com.google.gson.Gson;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +16,9 @@ public class Controller {
     private static Controller instance; // Instância única
     private final HashMap<String, Cliente> clientes = new HashMap<>();
     private int id = 0;
+
+    // Nome do arquivo onde os dados serão salvos
+    private final String ARQUIVO_DADOS = "dados.json";
 
     // Construtor privado para evitar instâncias externas
     private Controller() {}
@@ -23,7 +31,55 @@ public class Controller {
         return instance;
     }
 
-    // Métodos da classe (como já implementados)
+    // ========= Métodos de Serialização/Desserialização =========
+
+    /**
+     * Classe interna que "envolve" o estado do Controller para facilitar a serialização.
+     */
+    private static class DataWrapper {
+        private HashMap<String, Cliente> clientes;
+        private int id;
+    }
+
+    /**
+     * Salva os dados atuais do Controller em um arquivo JSON.
+     */
+    public void salvarDados() {
+        DataWrapper data = new DataWrapper();
+        data.clientes = this.clientes;
+        data.id = this.id;
+
+        Gson gson = new Gson();
+        try (FileWriter writer = new FileWriter(ARQUIVO_DADOS)) {
+            gson.toJson(data, writer);
+            System.out.println("Dados salvos com sucesso!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Carrega os dados do arquivo JSON e restaura o estado do Controller.
+     */
+    public void carregarDados() {
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader(ARQUIVO_DADOS)) {
+            DataWrapper data = gson.fromJson(reader, DataWrapper.class);
+            if (data != null) {
+                this.clientes.clear();
+                this.clientes.putAll(data.clientes);
+                this.id = data.id;
+                System.out.println("Dados carregados com sucesso!");
+            }
+        } catch (FileNotFoundException e) {
+            // Arquivo não existe – provavelmente é a primeira execução
+            System.out.println("Arquivo de dados não encontrado. Iniciando com dados vazios.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // =================== Métodos já implementados ===================
 
     public HashMap<String, String> getClientePorCpf(String cpf) {
         Cliente cliente = clientes.get(cpf);
@@ -133,19 +189,6 @@ public class Controller {
         }
     }
 
-    /**
-     * Edita os dados de um veículo associado a um cliente.
-     *
-     * @param cpf               CPF do cliente
-     * @param placa             Placa do veículo que será editado
-     * @param novaMarca         Nova marca (se null, não atualiza)
-     * @param novoModelo        Novo modelo (se null, não atualiza)
-     * @param novaCor           Nova cor (se null, não atualiza)
-     * @param novoAnoFabricacao Novo ano de fabricação (se negativo, não atualiza)
-     * @param novoAnoModelo     Novo ano modelo (se negativo, não atualiza)
-     * @param novaQuilometragem Nova quilometragem (se negativa, não atualiza)
-     * @return true se o veículo foi editado com sucesso; false caso contrário.
-     */
     public boolean editarVeiculoDoCliente(String cpf, String placa, String novaMarca, String novoModelo,
                                           String novaCor, int novoAnoFabricacao, int novoAnoModelo, int novaQuilometragem) {
         Cliente cliente = clientes.get(cpf);
@@ -161,7 +204,6 @@ public class Controller {
                     if (novaCor != null) {
                         veiculo.setCor(novaCor);
                     }
-                    // Atualiza os valores numéricos somente se os novos valores forem válidos (maiores ou iguais a zero)
                     if (novoAnoFabricacao >= 0) {
                         veiculo.setAnoFabricacao(novoAnoFabricacao);
                     }
@@ -178,13 +220,6 @@ public class Controller {
         return false;
     }
 
-    /**
-     * Deleta um veículo associado a um cliente.
-     *
-     * @param cpf   CPF do cliente
-     * @param placa Placa do veículo que será removido
-     * @return true se o veículo foi removido com sucesso; false caso contrário.
-     */
     public boolean deletarVeiculoDoCliente(String cpf, String placa) {
         Cliente cliente = clientes.get(cpf);
         if (cliente != null) {
@@ -199,14 +234,6 @@ public class Controller {
         return false;
     }
 
-    /**
-     * Retorna uma lista com a placa e o modelo de cada veículo associado ao cliente.
-     * Exemplo de retorno: ["had3423 corrola", "ad324ea civic"]
-     *
-     * @param cpf CPF do cliente
-     * @return Lista de strings contendo a placa e o modelo de cada veículo. Se o cliente não existir
-     *         ou não possuir veículos, retorna uma lista vazia.
-     */
     public ArrayList<String> listarVeiculosDoCliente(String cpf) {
         ArrayList<String> lista = new ArrayList<>();
         Cliente cliente = clientes.get(cpf);
@@ -216,5 +243,27 @@ public class Controller {
             }
         }
         return lista;
+    }
+    
+    public ArrayList<HashMap<String, String>> getTodosOsVeiculos() {
+        ArrayList<HashMap<String, String>> veiculosLista = new ArrayList<>();
+
+        for (Cliente cliente : clientes.values()) {
+            for (Veiculo veiculo : cliente.getVeiculos()) {
+                HashMap<String, String> veiculoData = new HashMap<>();
+                veiculoData.put("dono", cliente.getNome());
+                veiculoData.put("cpf", cliente.getCpf());
+                veiculoData.put("placa", veiculo.getPlaca());
+                veiculoData.put("marca", veiculo.getMarca());
+                veiculoData.put("modelo", veiculo.getModelo());
+                veiculoData.put("cor", veiculo.getCor());
+                veiculoData.put("anoFabricacao", String.valueOf(veiculo.getAnoFabricacao()));
+                veiculoData.put("anoModelo", String.valueOf(veiculo.getAnoModelo()));
+                veiculoData.put("quilometragem", String.valueOf(veiculo.getQuilometragem()));
+
+                veiculosLista.add(veiculoData);
+            }
+        }
+        return veiculosLista;
     }
 }
