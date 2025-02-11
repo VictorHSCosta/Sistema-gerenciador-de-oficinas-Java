@@ -98,7 +98,7 @@ public class Homepage extends javax.swing.JFrame {
         btnLogout.setAlignmentY(0.0F);
         btnLogout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
         btnLogout.setBorderPainted(false);
-        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogout.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         btnLogout.setDefaultCapable(false);
         btnLogout.setFocusPainted(false);
@@ -147,7 +147,6 @@ public class Homepage extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(89, 82, 75));
         jPanel2.setPreferredSize(new java.awt.Dimension(1024, 900));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLogout5.setBackground(new java.awt.Color(73, 55, 29));
         btnLogout5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -158,7 +157,7 @@ public class Homepage extends javax.swing.JFrame {
         btnLogout5.setAlignmentY(0.0F);
         btnLogout5.setAutoscrolls(true);
         btnLogout5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogout5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         btnLogout5.setDefaultCapable(false);
         btnLogout5.setFocusCycleRoot(true);
@@ -175,7 +174,6 @@ public class Homepage extends javax.swing.JFrame {
                 btnLogout5ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 300, 90));
 
         btnLogout4.setBackground(new java.awt.Color(73, 55, 29));
         btnLogout4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -186,7 +184,7 @@ public class Homepage extends javax.swing.JFrame {
         btnLogout4.setAlignmentY(0.0F);
         btnLogout4.setAutoscrolls(true);
         btnLogout4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogout4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         btnLogout4.setDefaultCapable(false);
         btnLogout4.setFocusCycleRoot(true);
@@ -203,7 +201,6 @@ public class Homepage extends javax.swing.JFrame {
                 btnLogout4ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 300, 90));
 
         btnLogout3.setBackground(new java.awt.Color(73, 55, 29));
         btnLogout3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -214,7 +211,7 @@ public class Homepage extends javax.swing.JFrame {
         btnLogout3.setAlignmentY(0.0F);
         btnLogout3.setAutoscrolls(true);
         btnLogout3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogout3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         btnLogout3.setDefaultCapable(false);
         btnLogout3.setFocusCycleRoot(true);
@@ -231,7 +228,6 @@ public class Homepage extends javax.swing.JFrame {
                 btnLogout3ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 300, 90));
 
         btnLogout2.setBackground(new java.awt.Color(73, 55, 29));
         btnLogout2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -242,7 +238,7 @@ public class Homepage extends javax.swing.JFrame {
         btnLogout2.setAlignmentY(0.0F);
         btnLogout2.setAutoscrolls(true);
         btnLogout2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogout2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         btnLogout2.setDefaultCapable(false);
         btnLogout2.setFocusCycleRoot(true);
@@ -259,7 +255,6 @@ public class Homepage extends javax.swing.JFrame {
                 btnLogout2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 300, 90));
 
         btnLogout1.setBackground(new java.awt.Color(73, 55, 29));
         btnLogout1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -270,7 +265,7 @@ public class Homepage extends javax.swing.JFrame {
         btnLogout1.setAlignmentY(0.0F);
         btnLogout1.setAutoscrolls(true);
         btnLogout1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57), new java.awt.Color(64, 43, 23), new java.awt.Color(81, 60, 57)));
-        btnLogout1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogout1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         btnLogout1.setDefaultCapable(false);
         btnLogout1.setFocusCycleRoot(true);
@@ -287,7 +282,6 @@ public class Homepage extends javax.swing.JFrame {
                 btnLogout1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 300, 90));
 
         jButton1.setBackground(new java.awt.Color(0, 65, 72));
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 48)); // NOI18N
@@ -302,14 +296,55 @@ public class Homepage extends javax.swing.JFrame {
         jButton1.setRolloverEnabled(false);
         jButton1.setSelected(true);
         jButton1.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 410, 70));
 
         jLabel2.setBackground(new java.awt.Color(102, 79, 57));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/carroMaior.jpeg"))); // NOI18N
         jLabel2.setText("jLabel2");
         jLabel2.setToolTipText("");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 754));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(340, 340, 340)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(570, 570, 570)
+                .addComponent(btnLogout4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(btnLogout2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(btnLogout5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addComponent(btnLogout3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(btnLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(btnLogout4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLogout2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(430, 430, 430)
+                .addComponent(btnLogout3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(btnLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
