@@ -22,7 +22,7 @@ public class CriarCliente extends javax.swing.JFrame {
     private String telefone;
     private final Controller controller;
     
-    private CriarCliente() {
+    public CriarCliente() {
         initComponents();
         
         controller = Controller.getInstance();
