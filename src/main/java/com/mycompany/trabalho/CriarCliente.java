@@ -236,7 +236,7 @@ public class CriarCliente extends javax.swing.JFrame {
             LabelTelefone.setText("");
             name.setText("");
             cpf.setText("");
-            new TelaConfimacao("Cliente criado",msg).setVisible(true);
+            new TelaConfimacao("Cliente criado ",msg).setVisible(true);
         }else{
             new TelaConfimacao("Erro","Erro, não foi possivel criar o cliente tente novamente").setVisible(true);
         }

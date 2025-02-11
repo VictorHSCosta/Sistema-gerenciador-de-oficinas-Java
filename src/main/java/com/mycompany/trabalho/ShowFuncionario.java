@@ -4,7 +4,7 @@
  */
 package com.mycompany.trabalho;
 
-import controller.Controller;
+import controller.ControllerFuncionario;
 import java.util.Arrays;
 import javax.swing.table.DefaultTableModel;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class ShowFuncionario extends javax.swing.JFrame {
     
     private static ShowFuncionario instance;
     
-    private Controller controle;
+    private ControllerFuncionario controle;
     
     public static ShowFuncionario getInstance(){
         if(instance == null){
@@ -64,6 +64,7 @@ public class ShowFuncionario extends javax.swing.JFrame {
         Delette = new javax.swing.JButton();
         buscar = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,17 +93,17 @@ public class ShowFuncionario extends javax.swing.JFrame {
 
         Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nome", "Cpf", "Telefone", "Quantidade Veiculo"
+                "Nome", "Cpf", "Telefone"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -155,12 +156,16 @@ public class ShowFuncionario extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Tabela Funcionarios");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButton1)
@@ -180,7 +185,9 @@ public class ShowFuncionario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToggleButton1)
-                    .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -223,7 +230,7 @@ public class ShowFuncionario extends javax.swing.JFrame {
 
     private void EditarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarButtonActionPerformed
                                                     
-         Controller controle = Controller.getInstance();
+         ControllerFuncionario controle = ControllerFuncionario.getInstance();
         DefaultTableModel model = (DefaultTableModel) Tabela.getModel();
 
         if (Tabela.isEditing()) {
@@ -237,7 +244,7 @@ public class ShowFuncionario extends javax.swing.JFrame {
 
             System.out.println("Editando CPF: " + cpf + " | Nome: " + nome + " | Telefone: " + telefone);
 
-            boolean sucesso = controle.editarCliente(cpf, nome, telefone);
+            boolean sucesso = controle.criarFuncionario(cpf, nome, telefone);
 
             if (!sucesso) {
                 JOptionPane.showMessageDialog(null, "Erro ao editar cliente com CPF: " + cpf);
@@ -271,8 +278,8 @@ public class ShowFuncionario extends javax.swing.JFrame {
 
         // Se o usuário confirmar a exclusão
         if (confirmacao == JOptionPane.YES_OPTION) {
-            Controller controle = Controller.getInstance();
-            controle.deletarCliente(cpf);
+            ControllerFuncionario controle = ControllerFuncionario.getInstance().getInstance();
+            controle.deletarFuncionario(cpf);
 
             // Exibe uma mensagem de sucesso
             JOptionPane.showMessageDialog(null, "Cliente deletado com sucesso!");
@@ -345,8 +352,8 @@ public class ShowFuncionario extends javax.swing.JFrame {
 
 public void preencherTabela() {
     // Obtém a instância do controlador
-    Controller controle = Controller.getInstance();
-    Map<String, Map<String, String>> clientes = controle.getClientes();
+    ControllerFuncionario controle = ControllerFuncionario.getInstance();
+    Map<String, Map<String, String>> clientes = controle.getFuncionarios();
 
     // Obtém o modelo da tabela
     DefaultTableModel model = (DefaultTableModel) Tabela.getModel();
@@ -360,12 +367,10 @@ public void preencherTabela() {
         String telefone = clienteData.get("telefone");
         String cpf = clienteData.get("cpf");
 
-        // Contar a quantidade de veículos
-        String veiculos = clienteData.get("veiculos");
-        int quantidadeVeiculos = veiculos.equals("Nenhum veículo associado") ? 0 : veiculos.split("\\[").length - 1;
+        
 
         // Adiciona a linha no modelo da tabela
-        model.addRow(new Object[]{nome, telefone, cpf, quantidadeVeiculos});
+        model.addRow(new Object[]{nome, telefone, cpf});
     }
 }
 
@@ -393,6 +398,7 @@ private void filtrarTabela(String pesquisa) {
     private javax.swing.JTable Tabela;
     private javax.swing.JTextField buscar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
