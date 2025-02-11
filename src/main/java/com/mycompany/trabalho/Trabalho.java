@@ -19,6 +19,7 @@ public class Trabalho extends javax.swing.JFrame {
     private String email;
     private String senha;
     private final Verificador verificar = new Verificador();
+    private Homepage home = Homepage.getInstance();
 
     public Trabalho() {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -172,7 +173,8 @@ public class Trabalho extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if (this.verificar.verificarSenha(this.email, this.senha)) {
-            new Homepage().setVisible(true);
+            home.setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

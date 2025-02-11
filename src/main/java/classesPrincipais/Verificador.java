@@ -11,21 +11,15 @@ package classesPrincipais;
  */
 public class Verificador {  
     
-    private String usuario1 = "victorhenrique8520@gmail.com";
-    private String usuario2 = "victorhenrique8520@gmail.com";
-    private String senha1 = "12345678";
+
     
     
     public boolean verificarSenha(String usuario ,String senha){
-        if(usuario1.equals(usuario)){
-            if(senha1.equals(senha)){
-                return true;
-            }
-        }else{
-            return false;
-        }
-        
-        return false;
+        return switch (usuario) {
+            case "adm@gmail.com" -> senha.equals("123456") ? true : false;
+            case "amd" -> senha.equals("amd") ? true :false;
+            default -> false;
+        };
     }
 
 }
