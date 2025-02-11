@@ -5,7 +5,7 @@
 package com.mycompany.trabalho;
 
 import classesPrincipais.Verificador;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  *
@@ -175,6 +175,9 @@ public class Trabalho extends javax.swing.JFrame {
         if (this.verificar.verificarSenha(this.email, this.senha)) {
             home.setVisible(true);
             this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Email e/ou senha incorretos, "
+                    + "Por favor, Tente logar novamente!", "Login inválido.", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

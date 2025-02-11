@@ -115,17 +115,33 @@ public class Controller {
     }
 
     public boolean criarCliente(String nome, String cpf, String telefone) {
-        if (nome == null || cpf == null || telefone == null) {
-            throw new IllegalArgumentException("Nenhum dos parâmetros pode ser nulo.");
+        cpf = cpf.replaceAll("[^0-9]", "");
+
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome não pode estar vazio.");
         }
-        if (!clientes.containsKey(cpf)) {
-            clientes.put(cpf, new Cliente(id++, nome, cpf, telefone));
-            return true;
-        } else {
-            System.out.println("Cliente já existe no banco de dados");
+        
+        if (cpf == null || cpf.isEmpty()) {
+            throw new IllegalArgumentException("O CPF não pode estar vazio.");
+        }
+        
+        if (telefone == null || telefone.trim().isEmpty()) {
+            throw new IllegalArgumentException("O telefone não pode estar vazio.");
+        }
+        
+        if (cpf.length() != 11) {
+            throw new IllegalArgumentException("O CPF deve conter 11 dígitos numéricos.");
+        }
+    
+        if (clientes.containsKey(cpf)) {
+            System.err.println("Tentativa de criação de cliente com CPF já cadastrado: " + cpf);
             return false;
         }
-    }
+
+        clientes.put(cpf, new Cliente(id++, nome, cpf, telefone));
+        return true;
+}
+    
 
     public boolean editarCliente(String cpf, String novoNome, String novoTelefone) {
         Cliente cliente = clientes.get(cpf);

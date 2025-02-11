@@ -228,19 +228,47 @@ public class CriarCliente extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        boolean Verifica  = controller.criarCliente(nome, CPF, telefone);
-        
-        if(Verifica == true){
-            String msg = "O cliente foi" + nome + " criado com sucesso" ;
-            this.setVisible(false);
-            LabelTelefone.setText("");
-            name.setText("");
-            cpf.setText("");
-            new TelaConfimacao("Cliente criado ",msg).setVisible(true);
-        }else{
-            new TelaConfimacao("Erro","Erro, não foi possivel criar o cliente tente novamente").setVisible(true);
-        }
-        
+         boolean Verifica = false;
+
+        try {
+            if (name == null || cpf == null || LabelTelefone == null) {
+                throw new NullPointerException("Algum componente da UI está nulo.");
+            }
+
+            String nome = name.getText();
+            String CPF = cpf.getText();
+            String telefone = LabelTelefone.getText();
+
+            if (controller == null) {
+                throw new NullPointerException("O controller não foi inicializado corretamente.");
+            }
+
+            Verifica = controller.criarCliente(nome, CPF, telefone);
+
+            if (Verifica) {
+                String msg = "O cliente " + nome + " foi criado com sucesso!";
+                this.setVisible(false);
+                LabelTelefone.setText("");
+                name.setText("");
+                cpf.setText("");
+                new TelaConfimacao("Cliente criado", msg).setVisible(true);
+            } else {
+                new TelaConfimacao("Erro", "O cliente já existe no banco de dados.").setVisible(true);
+            }
+            
+        } catch (IllegalArgumentException e) {
+            System.err.println("Erro ao criar cliente: " + e.getMessage());
+            new TelaConfimacao("Erro", "Erro: " + e.getMessage()).setVisible(true);
+            
+        } catch (NullPointerException e) {
+            System.err.println("Erro crítico: Algum valor necessário está nulo. Verifique os campos preenchidos.");
+            new TelaConfimacao("Erro", "Erro crítico: Algum campo essencial não foi preenchido.").setVisible(true);
+            
+        } catch (Exception e) {
+            System.err.println("Erro inesperado: " + e.getMessage());
+            new TelaConfimacao("Erro", "Ocorreu um erro inesperado. Entre em contato com o suporte.").setVisible(true);
+            
+        }    
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void LabelTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LabelTelefoneActionPerformed
