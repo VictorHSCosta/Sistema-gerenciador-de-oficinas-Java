@@ -54,7 +54,6 @@ public class Controller {
             gson.toJson(data, writer);
             System.out.println("Dados salvos com sucesso!");
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -75,7 +74,6 @@ public class Controller {
             // Arquivo não existe – provavelmente é a primeira execução
             System.out.println("Arquivo de dados não encontrado. Iniciando com dados vazios.");
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 

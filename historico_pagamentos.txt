@@ -1,0 +1,1 @@
+2025-02-17 09:39:44 - Cliente: Cliente Exemplo | Serviço: Serviço Exemplo | Valor: R$1805,00 | Método: Pix

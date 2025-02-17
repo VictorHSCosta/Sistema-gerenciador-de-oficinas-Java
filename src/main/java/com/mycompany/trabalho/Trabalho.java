@@ -6,6 +6,7 @@ package com.mycompany.trabalho;
 
 import classesPrincipais.Verificador;
 import javax.swing.*;
+import javax.swing.JFrame;
 
 /**
  *

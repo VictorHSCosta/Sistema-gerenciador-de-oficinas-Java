@@ -41,7 +41,6 @@ public class ControllerFuncionario {
             gson.toJson(data, writer);
             System.out.println("Dados dos funcionários salvos com sucesso!");
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -58,7 +57,6 @@ public class ControllerFuncionario {
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo de dados de funcionários não encontrado. Iniciando com dados vazios.");
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 

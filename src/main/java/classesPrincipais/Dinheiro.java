@@ -1,9 +1,12 @@
 package classesPrincipais;
 
-class Dinheiro implements Pagamento {
-    @Override
+class Dinheiro extends Pagamento {
+
+    public Dinheiro(String nomeCliente, String servico, double valor, String metodoPagamento) {
+        super(nomeCliente, servico, valor, metodoPagamento);
+    }
+    
     public boolean realizarPagamento(float valor) {
         return false;
     }
 }
-
