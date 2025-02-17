@@ -45,7 +45,6 @@ com/mycompany/trabalho/ShowCliente$4.class
 classesPrincipais/Funcionario.class
 controller/Controller$DataWrapper.class
 com/mycompany/trabalho/Homepage.class
-com/mycompany/trabalho/TelaPagamento.class
 com/mycompany/trabalho/CriarVeiculo$5.class
 com/mycompany/trabalho/EditarFuncionario.class
 com/mycompany/trabalho/CriarVeiculo$10.class
@@ -104,6 +103,7 @@ com/mycompany/trabalho/ShowVeiculo$4.class
 com/mycompany/trabalho/EditarServico.class
 classesPrincipais/Pessoa.class
 com/mycompany/trabalho/ShowCliente$7.class
+com/mycompany/trabalho/TelaPayment.class
 classesPrincipais/JsonDatabase$4.class
 com/mycompany/trabalho/ShowVeiculo$5.class
 com/mycompany/trabalho/ShowCliente$1.class
