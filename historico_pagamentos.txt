@@ -1,1 +1,3 @@
 2025-02-17 09:39:44 - Cliente: Cliente Exemplo | Serviço: Serviço Exemplo | Valor: R$1805,00 | Método: Pix
+2025-02-17 22:17:03 - Cliente: Pedro | Serviço: Revisão | Valor: R$900,00 | Método: Cartão
+2025-02-17 23:40:24 - Cliente: Pedro | Serviço: Troca de óleo e filtros | Valor: R$1805,00 | Método: Dinheiro
