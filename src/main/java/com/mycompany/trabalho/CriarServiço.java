@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author victor-costa
  */
-public class CriarVeiculo extends javax.swing.JFrame {
+public class CriarServiço extends javax.swing.JFrame {
 
     /**
      * Creates new form CriarVeiculo
      */
-    public CriarVeiculo() {
+    public CriarServiço() {
         initComponents();
         carregarClientesNoComboBox();
         // Alterar comportamento do botão "X"
@@ -34,7 +34,9 @@ public class CriarVeiculo extends javax.swing.JFrame {
     private int anoModel;
     private int km;
     private String marca;
-    
+    private String serviço = "Troca de óleo e filtros";
+    private String mecanico;
+    private String nome;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,21 +51,15 @@ public class CriarVeiculo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        placaInput = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         modelo = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        corInput = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        kmInput = new javax.swing.JTextField();
+        ClientName = new javax.swing.JTextField();
         jToggleButton3 = new javax.swing.JToggleButton();
         clientesBox = new javax.swing.JComboBox<>();
-        anoModeloInput = new javax.swing.JTextField();
-        anoInput = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        marcaInput = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -73,54 +69,42 @@ public class CriarVeiculo extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel1.setText("Cadastrar Novo veiculo");
+        jLabel1.setText("Cadastrar Novo Serviço");
 
         jLabel2.setText("Cpf do cliente");
 
-        jLabel3.setText("Placa do veiculo");
+        jLabel3.setText("Tipo de serviço");
         jLabel3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jLabel3FocusLost(evt);
             }
         });
 
-        placaInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                placaInputActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Modelo");
+        jLabel4.setText("Descrição do serviço");
 
         modelo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 modeloFocusLost(evt);
             }
         });
-
-        jLabel5.setText("Cor");
-
-        corInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                corInputFocusLost(evt);
-            }
-        });
-
-        jLabel6.setText("Ano ");
-
-        jLabel8.setText("Ano Modelo");
-
-        jLabel9.setText("Quilometragem");
-
-        kmInput.setText("km");
-        kmInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                kmInputFocusLost(evt);
-            }
-        });
-        kmInput.addActionListener(new java.awt.event.ActionListener() {
+        modelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kmInputActionPerformed(evt);
+                modeloActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Mecânico");
+
+        jLabel9.setText("Nome Cliente");
+
+        ClientName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ClientNameFocusLost(evt);
+            }
+        });
+        ClientName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClientNameActionPerformed(evt);
             }
         });
 
@@ -145,23 +129,21 @@ public class CriarVeiculo extends javax.swing.JFrame {
             }
         });
 
-        anoModeloInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                anoModeloInputFocusLost(evt);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Troca de óleo e filtros", "Alinhamento e balanceamento", "Manutenção preventiva", "Outros serviços" }));
+        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseClicked(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
 
-        anoInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                anoInputFocusLost(evt);
-            }
-        });
-
-        jLabel10.setText("Marca");
-
-        marcaInput.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                marcaInputFocusLost(evt);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
             }
         });
 
@@ -171,32 +153,29 @@ public class CriarVeiculo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(placaInput)
-                    .addComponent(modelo)
-                    .addComponent(corInput)
-                    .addComponent(clientesBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(anoInput))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(kmInput)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jToggleButton3))
-                    .addComponent(anoModeloInput)
+                    .addComponent(modelo)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clientesBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addGap(0, 154, Short.MAX_VALUE))
-                    .addComponent(marcaInput))
+                            .addComponent(ClientName)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTextField1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 115, Short.MAX_VALUE)
+                                .addComponent(jToggleButton3)
+                                .addGap(30, 30, 30)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -205,42 +184,28 @@ public class CriarVeiculo extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(jLabel1)
                 .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(clientesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(anoModeloInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel9))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(placaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kmInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(marcaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(corInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton3)
-                    .addComponent(anoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(clientesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ClientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToggleButton3)
+                .addGap(41, 41, 41))
         );
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/carro.jpeg"))); // NOI18N
@@ -252,7 +217,7 @@ public class CriarVeiculo extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 135, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +233,7 @@ public class CriarVeiculo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -293,8 +258,8 @@ public class CriarVeiculo extends javax.swing.JFrame {
             controle.adicionarVeiculoAoCliente(cpf, placa, marca, modeloCarro, cor, ano, anoModel, km);
 
             // Se não lançar exceção, exibe mensagem de sucesso
-            JOptionPane.showMessageDialog(null, "Veículo adicionado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-            this.setVisible(false);
+            TelaPayment telaPayment = new TelaPayment(nome,serviço);
+            telaPayment.setVisible(true);
         } catch (Exception e) {
             // Se houver erro, exibe uma mensagem de falha
             JOptionPane.showMessageDialog(null, "Erro ao adicionar veículo: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -304,10 +269,6 @@ public class CriarVeiculo extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void placaInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placaInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_placaInputActionPerformed
 
     private void carregarClientesNoComboBox() {
         Controller controle = Controller.getInstance();
@@ -354,7 +315,7 @@ public class CriarVeiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        this.placa = placaInput.getText();
+
     }//GEN-LAST:event_jLabel3FocusLost
 
     private void modeloFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_modeloFocusLost
@@ -363,37 +324,32 @@ public class CriarVeiculo extends javax.swing.JFrame {
         this.modeloCarro = modelo.getText();
     }//GEN-LAST:event_modeloFocusLost
 
-    private void kmInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kmInputActionPerformed
+    private void ClientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_kmInputActionPerformed
+        nome = ClientName.getText();
+    }//GEN-LAST:event_ClientNameActionPerformed
 
-    private void corInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_corInputFocusLost
+    private void ClientNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ClientNameFocusLost
         // TODO add your handling code here:
         
-        this.cor = corInput.getText();
-    }//GEN-LAST:event_corInputFocusLost
+        nome = ClientName.getText();
+    }//GEN-LAST:event_ClientNameFocusLost
 
-    private void anoInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_anoInputFocusLost
-        // TODO add your handling code here:
-        this.ano = Integer.parseInt(anoInput.getText());
-    }//GEN-LAST:event_anoInputFocusLost
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        serviço = (String) jComboBox1.getSelectedItem();
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void anoModeloInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_anoModeloInputFocusLost
-        // TODO add your handling code here:
-        this.anoModel = Integer.parseInt(anoModeloInput.getText());
-    }//GEN-LAST:event_anoModeloInputFocusLost
+    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+        serviço = (String) jComboBox1.getSelectedItem();
+    }//GEN-LAST:event_jComboBox1MouseClicked
 
-    private void kmInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_kmInputFocusLost
-        // TODO add your handling code here:
-        
-        km = Integer.parseInt(kmInput.getText());
-    }//GEN-LAST:event_kmInputFocusLost
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        mecanico = (String) jTextField1.getText();
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void marcaInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_marcaInputFocusLost
+    private void modeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloActionPerformed
         // TODO add your handling code here:
-        
-        marca = marcaInput.getText();
-    }//GEN-LAST:event_marcaInputFocusLost
+    }//GEN-LAST:event_modeloActionPerformed
 
     
     
@@ -424,45 +380,40 @@ public class CriarVeiculo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CriarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarServiço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CriarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarServiço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CriarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarServiço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CriarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarServiço.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CriarVeiculo().setVisible(true);
+                new CriarServiço().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField anoInput;
-    private javax.swing.JTextField anoModeloInput;
+    private javax.swing.JTextField ClientName;
     private javax.swing.JComboBox<String> clientesBox;
-    private javax.swing.JTextField corInput;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JTextField kmInput;
-    private javax.swing.JTextField marcaInput;
     private javax.swing.JTextField modelo;
-    private javax.swing.JTextField placaInput;
     // End of variables declaration//GEN-END:variables
 }

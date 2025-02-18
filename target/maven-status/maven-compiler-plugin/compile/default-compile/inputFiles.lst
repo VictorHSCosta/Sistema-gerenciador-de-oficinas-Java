@@ -16,7 +16,8 @@
 /home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/classesPrincipais/Verificador.java
 /home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarCliente.java
 /home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarFuncionario.java
-/home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarServico.java
+/home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarServicoView.java
+/home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarServiço.java
 /home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/CriarVeiculo.java
 /home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/DeletarFuncionario.java
 /home/menezes/Coding/PTP1/Sistema-gerenciador-de-oficinas-Java/src/main/java/com/mycompany/trabalho/DeletarServico.java
